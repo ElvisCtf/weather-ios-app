@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		FCBDA30C2BF6FC1900CB7408 /* APIEndpoints.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCBDA30B2BF6FC1900CB7408 /* APIEndpoints.swift */; };
+		FCBDA30E2BF6FC7900CB7408 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCBDA30D2BF6FC7900CB7408 /* NetworkManager.swift */; };
+		FCBDA3112BF6FCFD00CB7408 /* CurrentWeatherViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCBDA3102BF6FCFD00CB7408 /* CurrentWeatherViewModel.swift */; };
 		FCD569F22BF5DDC40007D1B5 /* WeatherApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCD569F12BF5DDC40007D1B5 /* WeatherApp.swift */; };
 		FCD569F42BF5DDC40007D1B5 /* CurrentWeatherView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCD569F32BF5DDC40007D1B5 /* CurrentWeatherView.swift */; };
 		FCD569F62BF5DDC60007D1B5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FCD569F52BF5DDC60007D1B5 /* Assets.xcassets */; };
@@ -34,6 +37,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		FCBDA30B2BF6FC1900CB7408 /* APIEndpoints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIEndpoints.swift; sourceTree = "<group>"; };
+		FCBDA30D2BF6FC7900CB7408 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
+		FCBDA3102BF6FCFD00CB7408 /* CurrentWeatherViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentWeatherViewModel.swift; sourceTree = "<group>"; };
 		FCD569EE2BF5DDC40007D1B5 /* Weather.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Weather.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FCD569F12BF5DDC40007D1B5 /* WeatherApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherApp.swift; sourceTree = "<group>"; };
 		FCD569F32BF5DDC40007D1B5 /* CurrentWeatherView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentWeatherView.swift; sourceTree = "<group>"; };
@@ -71,6 +77,31 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		FCBDA3092BF6FBCB00CB7408 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				FCBDA30A2BF6FBE100CB7408 /* APIService */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		FCBDA30A2BF6FBE100CB7408 /* APIService */ = {
+			isa = PBXGroup;
+			children = (
+				FCBDA30B2BF6FC1900CB7408 /* APIEndpoints.swift */,
+				FCBDA30D2BF6FC7900CB7408 /* NetworkManager.swift */,
+				FCBDA30F2BF6FCAE00CB7408 /* Models */,
+			);
+			path = APIService;
+			sourceTree = "<group>";
+		};
+		FCBDA30F2BF6FCAE00CB7408 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
 		FCD569E52BF5DDC40007D1B5 = {
 			isa = PBXGroup;
 			children = (
@@ -95,9 +126,10 @@
 			isa = PBXGroup;
 			children = (
 				FCD569F12BF5DDC40007D1B5 /* WeatherApp.swift */,
-				FCD569F32BF5DDC40007D1B5 /* CurrentWeatherView.swift */,
-				FCD569F52BF5DDC60007D1B5 /* Assets.xcassets */,
+				FCBDA3092BF6FBCB00CB7408 /* Services */,
+				FCD56A1B2BF5F6680007D1B5 /* CurrentWeather */,
 				FCD569F72BF5DDC60007D1B5 /* Preview Content */,
+				FCD569F52BF5DDC60007D1B5 /* Assets.xcassets */,
 			);
 			path = Weather;
 			sourceTree = "<group>";
@@ -125,6 +157,15 @@
 				FCD56A0E2BF5DDC60007D1B5 /* WeatherUITestsLaunchTests.swift */,
 			);
 			path = WeatherUITests;
+			sourceTree = "<group>";
+		};
+		FCD56A1B2BF5F6680007D1B5 /* CurrentWeather */ = {
+			isa = PBXGroup;
+			children = (
+				FCD569F32BF5DDC40007D1B5 /* CurrentWeatherView.swift */,
+				FCBDA3102BF6FCFD00CB7408 /* CurrentWeatherViewModel.swift */,
+			);
+			path = CurrentWeather;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -257,6 +298,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FCBDA30E2BF6FC7900CB7408 /* NetworkManager.swift in Sources */,
+				FCBDA30C2BF6FC1900CB7408 /* APIEndpoints.swift in Sources */,
+				FCBDA3112BF6FCFD00CB7408 /* CurrentWeatherViewModel.swift in Sources */,
 				FCD569F42BF5DDC40007D1B5 /* CurrentWeatherView.swift in Sources */,
 				FCD569F22BF5DDC40007D1B5 /* WeatherApp.swift in Sources */,
 			);
