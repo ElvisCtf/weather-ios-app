@@ -11,17 +11,15 @@ struct CurrentWeatherView: View {
     var body: some View {
         VStack(spacing: 16) {
             
+            Label("Hong Kong", systemImage: "location.circle")
+                .font(.system(size: 24, weight: .medium))
+            
             VStack(spacing: 10) {
-                VStack(spacing: 18) {
-                    Image(systemName: "cloud.sun")
-                        .resizable()
-                        .scaledToFit()
-                        .font(Font.title.weight(.light))
-                        .frame(width: 100)
-                    
-                    Label("Hong Kong", systemImage: "location.circle")
-                        .font(.system(size: 24, weight: .medium))
-                }
+                Image(systemName: "cloud.sun")
+                    .resizable()
+                    .scaledToFit()
+                    .font(Font.title.weight(.light))
+                    .frame(width: 100)
                 
                 VStack() {
                     Text("25°C")
