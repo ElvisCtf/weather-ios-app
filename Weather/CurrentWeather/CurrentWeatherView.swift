@@ -28,11 +28,11 @@ struct CurrentWeatherView: View {
                         .font(.system(size: 72, weight: .light))
                     
                     HStack(spacing: 36) {
-                        Label("22°C", systemImage: "thermometer.low")
+                        Label(viewmodel.currentWeatherModel.minTemp, systemImage: "thermometer.low")
                             .font(.system(size: 18, weight: .regular))
                             .imageScale(.large)
                         
-                        Label("30°C", systemImage: "thermometer.high")
+                        Label(viewmodel.currentWeatherModel.maxTemp, systemImage: "thermometer.high")
                             .font(.system(size: 18, weight: .regular))
                             .imageScale(.large)
                     }
