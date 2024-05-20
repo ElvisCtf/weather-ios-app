@@ -12,8 +12,6 @@ import Alamofire
 actor NetworkManager: GlobalActor {
     
     static let shared = NetworkManager()
-
-    private let maxWaitTime = 15.0
     
     private init() {}
     

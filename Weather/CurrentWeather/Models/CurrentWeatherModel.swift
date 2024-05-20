@@ -11,6 +11,8 @@ class CurrentWeatherModel {
     let currentWeatherDto: CurrentWeatherReportDto?
     
     var temp = ""
+    var minTemp = ""
+    var maxTemp = ""
     var uvIndex = ""
     var humidity = ""
     var windSpeed = ""
@@ -27,7 +29,9 @@ class CurrentWeatherModel {
     
     func setTemp() {
         if let unwrappedVal = currentWeatherDto?.temperature?.data?.first?.value {
-            temp = "\(unwrappedVal)"
+            temp = "\(unwrappedVal)°"
+            minTemp = "\(round((unwrappedVal - unwrappedVal / 6) * 10) / 10)°"
+            maxTemp = "\(round((unwrappedVal + unwrappedVal / 6) * 10) / 10)°"
         } else {
             temp = "nil"
         }
