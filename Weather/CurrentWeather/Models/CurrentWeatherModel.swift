@@ -9,7 +9,6 @@ import Foundation
 
 class CurrentWeatherModel {
     let currentWeatherDto: CurrentWeatherReportDto?
-    
     var temp = ""
     var minTemp = ""
     var maxTemp = ""
@@ -17,6 +16,8 @@ class CurrentWeatherModel {
     var humidity = ""
     var windSpeed = ""
     var visibility = ""
+    var updateTime = ""
+    var icon = ""
     
     init(with currentWeatherDto: CurrentWeatherReportDto? = nil) {
         self.currentWeatherDto = currentWeatherDto
@@ -25,6 +26,8 @@ class CurrentWeatherModel {
         setHumidity()
         setWindSpeed()
         setVisibility()
+        setUpdateTime()
+        setIcon()
     }
     
     func setTemp() {
@@ -54,10 +57,25 @@ class CurrentWeatherModel {
     }
     
     func setWindSpeed() {
-        windSpeed = "0.3 km/h"
+        windSpeed = "15 km/h"
     }
     
     func setVisibility() {
-        visibility = "12 km"
+        visibility = "9 km"
+    }
+    
+    func setUpdateTime() {
+        if let unwrappedVal = currentWeatherDto?.updateTime?.hhmm() {
+            updateTime = "Last updated at \(unwrappedVal)"
+        } else {
+            updateTime = "nil"
+        }
+    }
+    func setIcon() {
+        if let unwrappedVal = currentWeatherDto?.icon?.first {
+            icon = Constants.iconDict[unwrappedVal] ?? "cloud.sun"
+        } else {
+            icon = "cloud.sun"
+        }
     }
 }
