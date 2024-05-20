@@ -17,7 +17,7 @@ struct CurrentWeatherView: View {
                 .font(.system(size: 24, weight: .medium))
             
             VStack(spacing: 10) {
-                Image(systemName: "cloud.sun")
+                Image(systemName: viewmodel.currentWeatherModel.icon)
                     .resizable()
                     .scaledToFit()
                     .font(Font.title.weight(.light))
@@ -41,7 +41,7 @@ struct CurrentWeatherView: View {
                 Text("Sunny")
                     .font(.system(size: 18, weight: .medium))
                 
-                Text("Last updated: 15:27")
+                Text(viewmodel.currentWeatherModel.updateTime)
                     .font(.system(size: 12, weight: .light))
             }
             
