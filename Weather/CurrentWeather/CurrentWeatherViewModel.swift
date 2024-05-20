@@ -8,6 +8,25 @@
 import Foundation
 
 
-class CurrentWeatherViewModel {
+class CurrentWeatherViewModel: ObservableObject {
+    @MainActor @Published var currentWeatherModel = CurrentWeatherModel()
+    @MainActor @Published var errorMessage = ""
     
+    init() {}
+    
+    func getCurrentWeather() async {
+        await MainActor.run {
+            self.errorMessage = ""
+        }
+        
+        if let dto = await NetworkAPI.getCurrentWeatherReport() {
+            await MainActor.run {
+                self.currentWeatherModel = CurrentWeatherModel(with: dto)
+            }
+        } else {
+            await MainActor.run {
+                self.errorMessage = "Fetch data failed"
+            }
+        }
+    }
 }
