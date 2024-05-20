@@ -8,6 +8,8 @@
 import SwiftUI
 
 struct CurrentWeatherView: View {
+    @StateObject var viewmodel = CurrentWeatherViewModel()
+    
     var body: some View {
         VStack(spacing: 16) {
             
@@ -22,7 +24,7 @@ struct CurrentWeatherView: View {
                     .frame(width: 100)
                 
                 VStack() {
-                    Text("25°C")
+                    Text(viewmodel.currentWeatherModel.temp)
                         .font(.system(size: 72, weight: .light))
                     
                     HStack(spacing: 36) {
@@ -46,7 +48,7 @@ struct CurrentWeatherView: View {
             Grid(horizontalSpacing: 14, verticalSpacing: 14) {
                 GridRow {
                     GroupBox() {
-                        Text("8")
+                        Text(viewmodel.currentWeatherModel.uvIndex)
                             .font(.system(size: 18, weight: .bold))
                             .padding(1)
                     } label: {
@@ -56,11 +58,11 @@ struct CurrentWeatherView: View {
                     }
                     
                     GroupBox() {
-                        Text("60 %")
+                        Text(viewmodel.currentWeatherModel.humidity)
                             .font(.system(size: 18, weight: .bold))
                             .padding(1)
                     } label: {
-                        Label("HUMIDILITY", systemImage: "drop")
+                        Label("HUMIDITY", systemImage: "drop")
                             .font(.system(size: 14, weight: .medium))
                             .imageScale(.large)
                     }
@@ -89,9 +91,11 @@ struct CurrentWeatherView: View {
                 }
             }
             .padding()
+        }.onAppear {
+            Task {
+                await viewmodel.getCurrentWeather()
+            }
         }
-        
-        
         
         Spacer()
     }

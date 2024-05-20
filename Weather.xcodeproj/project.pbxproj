@@ -7,9 +7,15 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		FC7568952BFAE911007C5014 /* NetworkAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC7568942BFAE911007C5014 /* NetworkAPI.swift */; };
+		FC7568972BFAF9D6007C5014 /* LocalWeatherForecastDto.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC7568962BFAF9D6007C5014 /* LocalWeatherForecastDto.swift */; };
 		FCBDA30C2BF6FC1900CB7408 /* APIEndpoints.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCBDA30B2BF6FC1900CB7408 /* APIEndpoints.swift */; };
 		FCBDA30E2BF6FC7900CB7408 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCBDA30D2BF6FC7900CB7408 /* NetworkManager.swift */; };
 		FCBDA3112BF6FCFD00CB7408 /* CurrentWeatherViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCBDA3102BF6FCFD00CB7408 /* CurrentWeatherViewModel.swift */; };
+		FCBDA3132BF705D800CB7408 /* CurrentWeatherReportDto.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCBDA3122BF705D800CB7408 /* CurrentWeatherReportDto.swift */; };
+		FCBDA3162BF708B400CB7408 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = FCBDA3152BF708B400CB7408 /* Alamofire */; };
+		FCBDA3182BF708B400CB7408 /* AlamofireDynamic in Frameworks */ = {isa = PBXBuildFile; productRef = FCBDA3172BF708B400CB7408 /* AlamofireDynamic */; };
+		FCBDA31B2BF716BE00CB7408 /* CurrentWeatherModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCBDA31A2BF716BE00CB7408 /* CurrentWeatherModel.swift */; };
 		FCD569F22BF5DDC40007D1B5 /* WeatherApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCD569F12BF5DDC40007D1B5 /* WeatherApp.swift */; };
 		FCD569F42BF5DDC40007D1B5 /* CurrentWeatherView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCD569F32BF5DDC40007D1B5 /* CurrentWeatherView.swift */; };
 		FCD569F62BF5DDC60007D1B5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FCD569F52BF5DDC60007D1B5 /* Assets.xcassets */; };
@@ -37,9 +43,13 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		FC7568942BFAE911007C5014 /* NetworkAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkAPI.swift; sourceTree = "<group>"; };
+		FC7568962BFAF9D6007C5014 /* LocalWeatherForecastDto.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalWeatherForecastDto.swift; sourceTree = "<group>"; };
 		FCBDA30B2BF6FC1900CB7408 /* APIEndpoints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIEndpoints.swift; sourceTree = "<group>"; };
 		FCBDA30D2BF6FC7900CB7408 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		FCBDA3102BF6FCFD00CB7408 /* CurrentWeatherViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentWeatherViewModel.swift; sourceTree = "<group>"; };
+		FCBDA3122BF705D800CB7408 /* CurrentWeatherReportDto.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentWeatherReportDto.swift; sourceTree = "<group>"; };
+		FCBDA31A2BF716BE00CB7408 /* CurrentWeatherModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentWeatherModel.swift; sourceTree = "<group>"; };
 		FCD569EE2BF5DDC40007D1B5 /* Weather.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Weather.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FCD569F12BF5DDC40007D1B5 /* WeatherApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherApp.swift; sourceTree = "<group>"; };
 		FCD569F32BF5DDC40007D1B5 /* CurrentWeatherView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentWeatherView.swift; sourceTree = "<group>"; };
@@ -57,6 +67,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FCBDA3162BF708B400CB7408 /* Alamofire in Frameworks */,
+				FCBDA3182BF708B400CB7408 /* AlamofireDynamic in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -77,6 +89,13 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		FC7568982BFB0150007C5014 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
 		FCBDA3092BF6FBCB00CB7408 /* Services */ = {
 			isa = PBXGroup;
 			children = (
@@ -90,6 +109,7 @@
 			children = (
 				FCBDA30B2BF6FC1900CB7408 /* APIEndpoints.swift */,
 				FCBDA30D2BF6FC7900CB7408 /* NetworkManager.swift */,
+				FC7568942BFAE911007C5014 /* NetworkAPI.swift */,
 				FCBDA30F2BF6FCAE00CB7408 /* Models */,
 			);
 			path = APIService;
@@ -98,6 +118,16 @@
 		FCBDA30F2BF6FCAE00CB7408 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				FCBDA3122BF705D800CB7408 /* CurrentWeatherReportDto.swift */,
+				FC7568962BFAF9D6007C5014 /* LocalWeatherForecastDto.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		FCBDA3192BF716AC00CB7408 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				FCBDA31A2BF716BE00CB7408 /* CurrentWeatherModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -128,6 +158,7 @@
 				FCD569F12BF5DDC40007D1B5 /* WeatherApp.swift */,
 				FCBDA3092BF6FBCB00CB7408 /* Services */,
 				FCD56A1B2BF5F6680007D1B5 /* CurrentWeather */,
+				FC7568982BFB0150007C5014 /* Extensions */,
 				FCD569F72BF5DDC60007D1B5 /* Preview Content */,
 				FCD569F52BF5DDC60007D1B5 /* Assets.xcassets */,
 			);
@@ -162,6 +193,7 @@
 		FCD56A1B2BF5F6680007D1B5 /* CurrentWeather */ = {
 			isa = PBXGroup;
 			children = (
+				FCBDA3192BF716AC00CB7408 /* Models */,
 				FCD569F32BF5DDC40007D1B5 /* CurrentWeatherView.swift */,
 				FCBDA3102BF6FCFD00CB7408 /* CurrentWeatherViewModel.swift */,
 			);
@@ -184,6 +216,10 @@
 			dependencies = (
 			);
 			name = Weather;
+			packageProductDependencies = (
+				FCBDA3152BF708B400CB7408 /* Alamofire */,
+				FCBDA3172BF708B400CB7408 /* AlamofireDynamic */,
+			);
 			productName = Weather;
 			productReference = FCD569EE2BF5DDC40007D1B5 /* Weather.app */;
 			productType = "com.apple.product-type.application";
@@ -256,6 +292,9 @@
 				Base,
 			);
 			mainGroup = FCD569E52BF5DDC40007D1B5;
+			packageReferences = (
+				FCBDA3142BF708B400CB7408 /* XCRemoteSwiftPackageReference "Alamofire" */,
+			);
 			productRefGroup = FCD569EF2BF5DDC40007D1B5 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -299,10 +338,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				FCBDA30E2BF6FC7900CB7408 /* NetworkManager.swift in Sources */,
+				FC7568972BFAF9D6007C5014 /* LocalWeatherForecastDto.swift in Sources */,
 				FCBDA30C2BF6FC1900CB7408 /* APIEndpoints.swift in Sources */,
+				FCBDA31B2BF716BE00CB7408 /* CurrentWeatherModel.swift in Sources */,
+				FCBDA3132BF705D800CB7408 /* CurrentWeatherReportDto.swift in Sources */,
 				FCBDA3112BF6FCFD00CB7408 /* CurrentWeatherViewModel.swift in Sources */,
 				FCD569F42BF5DDC40007D1B5 /* CurrentWeatherView.swift in Sources */,
 				FCD569F22BF5DDC40007D1B5 /* WeatherApp.swift in Sources */,
+				FC7568952BFAE911007C5014 /* NetworkAPI.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -474,6 +517,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -503,6 +547,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -632,6 +677,30 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		FCBDA3142BF708B400CB7408 /* XCRemoteSwiftPackageReference "Alamofire" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Alamofire/Alamofire.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.9.1;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		FCBDA3152BF708B400CB7408 /* Alamofire */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = FCBDA3142BF708B400CB7408 /* XCRemoteSwiftPackageReference "Alamofire" */;
+			productName = Alamofire;
+		};
+		FCBDA3172BF708B400CB7408 /* AlamofireDynamic */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = FCBDA3142BF708B400CB7408 /* XCRemoteSwiftPackageReference "Alamofire" */;
+			productName = AlamofireDynamic;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = FCD569E62BF5DDC40007D1B5 /* Project object */;
 }

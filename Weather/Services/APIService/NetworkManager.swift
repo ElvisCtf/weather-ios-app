@@ -6,10 +6,43 @@
 //
 
 import Foundation
+import Alamofire
 
 
-class NetworkManager {
+actor NetworkManager: GlobalActor {
+    
     static let shared = NetworkManager()
 
-    private init() { }
+    private let maxWaitTime = 15.0
+    
+    private init() {}
+    
+    func request<T: Decodable>(
+        method: HTTPMethod,
+        url: String,
+        headers: [String: String] = [String: String](),
+        params: Parameters? = nil,
+        of type: T.Type
+    ) async throws -> T {
+        let decoder = JSONDecoder()
+        decoder.dateDecodingStrategy = .iso8601
+        
+        return try await withCheckedThrowingContinuation { continuation in
+            AF.request(
+                url,
+                method: method,
+                parameters: params,
+                encoding: JSONEncoding.default,
+                headers: HTTPHeaders(headers)
+            ).responseDecodable(of: type, decoder: decoder) { response in
+                switch response.result {
+                case let .success(data):
+                    continuation.resume(returning: data)
+
+                case let .failure(error):
+                    continuation.resume(throwing: error)
+                }
+            }
+        }
+    }
 }
