@@ -11,93 +11,111 @@ struct CurrentWeatherView: View {
     @StateObject var viewmodel = CurrentWeatherViewModel()
     
     var body: some View {
-        VStack(spacing: 16) {
+        ScrollView(.vertical) {
             
-            Label("Hong Kong", systemImage: "location.circle")
-                .font(.system(size: 24, weight: .medium))
-            
-            VStack(spacing: 10) {
-                Image(systemName: viewmodel.currentWeatherModel.icon)
-                    .resizable()
-                    .scaledToFit()
-                    .font(Font.title.weight(.light))
-                    .frame(width: 100)
+            VStack {
                 
-                VStack() {
-                    Text(viewmodel.currentWeatherModel.temp)
-                        .font(.system(size: 72, weight: .light))
-                    
-                    HStack(spacing: 36) {
-                        Label(viewmodel.currentWeatherModel.minTemp, systemImage: "thermometer.low")
-                            .font(.system(size: 18, weight: .regular))
-                            .imageScale(.large)
+                HStack {
+                    VStack(spacing: 6) {
+                        Text(viewmodel.currentWeatherModel.temp)
+                            .font(.system(size: 72, weight: .light))
+                            .foregroundColor(.white)
+                            .frame(maxWidth: .infinity, alignment: .leading)
                         
-                        Label(viewmodel.currentWeatherModel.maxTemp, systemImage: "thermometer.high")
-                            .font(.system(size: 18, weight: .regular))
-                            .imageScale(.large)
+                        Text("Sunny")
+                            .font(.system(size: 24, weight: .medium))
+                            .foregroundColor(.white)
+                            .frame(maxWidth: .infinity, alignment: .leading)
+                            .padding(EdgeInsets(top: 0, leading: 0, bottom: 16, trailing: 0))
+                        
+                        Text("Hong Kong")
+                            .font(.system(size: 18, weight: .medium))
+                            .foregroundColor(.white)
+                            .frame(maxWidth: .infinity, alignment: .leading)
+                        
+                        
+                        Text(viewmodel.currentWeatherModel.tempRange)
+                            .font(.system(size: 14, weight: .regular))
+                            .foregroundColor(.white)
+                            .frame(maxWidth: .infinity, alignment: .leading)
+                        
+                        Text(viewmodel.currentWeatherModel.updateTime)
+                            .font(.system(size: 14, weight: .regular))
+                            .foregroundColor(.white)
+                            .frame(maxWidth: .infinity, alignment: .leading)
                     }
-                }
+                    
+                    Image(systemName: viewmodel.currentWeatherModel.icon)
+                        .resizable()
+                        .scaledToFit()
+                        .font(Font.title.weight(.light))
+                        .foregroundColor(.white)
+                        .frame(width: 110, alignment: .leading)
+                        .padding(24)
+                }.padding(EdgeInsets(top: 16, leading: 24, bottom: 16, trailing: 24))
                 
-                Text("Sunny")
-                    .font(.system(size: 18, weight: .medium))
                 
-                Text(viewmodel.currentWeatherModel.updateTime)
-                    .font(.system(size: 12, weight: .light))
+                Grid(horizontalSpacing: 14, verticalSpacing: 14) {
+                    GridRow {
+                        GroupBox() {
+                            Text(viewmodel.currentWeatherModel.uvIndex)
+                                .font(.system(size: 18, weight: .bold))
+                                .foregroundStyle(.white)
+                                .padding(1)
+                        } label: {
+                            Label("UV INDEX", systemImage: "sun.max")
+                                .font(.system(size: 14, weight: .medium))
+                                .foregroundStyle(.white)
+                                .imageScale(.large)
+                        }.backgroundStyle(.indigo.opacity(0.3))
+                        
+                        GroupBox() {
+                            Text(viewmodel.currentWeatherModel.humidity)
+                                .font(.system(size: 18, weight: .bold))
+                                .foregroundStyle(.white)
+                                .padding(1)
+                        } label: {
+                            Label("HUMIDITY", systemImage: "drop")
+                                .font(.system(size: 14, weight: .medium))
+                                .foregroundStyle(.white)
+                                .imageScale(.large)
+                        }.backgroundStyle(.indigo.opacity(0.3))
+                    }
+                    
+                    GridRow {
+                        GroupBox() {
+                            Text("0.2 km/h")
+                                .font(.system(size: 18, weight: .bold))
+                                .foregroundStyle(.white)
+                                .padding(1)
+                        } label: {
+                            Label("WIND", systemImage: "wind")
+                                .font(.system(size: 14, weight: .medium))
+                                .foregroundStyle(.white)
+                                .imageScale(.large)
+                        }.backgroundStyle(.indigo.opacity(0.3))
+                        
+                        GroupBox() {
+                            Text("12 km")
+                                .font(.system(size: 18, weight: .bold))
+                                .foregroundStyle(.white)
+                                .padding(1)
+                        } label: {
+                            Label("VISIBILITY", systemImage: "eye")
+                                .font(.system(size: 14, weight: .medium))
+                                .foregroundStyle(.white)
+                                .imageScale(.large)
+                        }.backgroundStyle(.indigo.opacity(0.3))
+                    }
+                }.padding(16)
+                
             }
             
-            Grid(horizontalSpacing: 14, verticalSpacing: 14) {
-                GridRow {
-                    GroupBox() {
-                        Text(viewmodel.currentWeatherModel.uvIndex)
-                            .font(.system(size: 18, weight: .bold))
-                            .padding(1)
-                    } label: {
-                        Label("UV INDEX", systemImage: "sun.max")
-                            .font(.system(size: 14, weight: .medium))
-                            .imageScale(.large)
-                    }
-                    
-                    GroupBox() {
-                        Text(viewmodel.currentWeatherModel.humidity)
-                            .font(.system(size: 18, weight: .bold))
-                            .padding(1)
-                    } label: {
-                        Label("HUMIDITY", systemImage: "drop")
-                            .font(.system(size: 14, weight: .medium))
-                            .imageScale(.large)
-                    }
-                }
-                
-                GridRow {
-                    GroupBox() {
-                        Text("0.2 km/h")
-                            .font(.system(size: 18, weight: .bold))
-                            .padding(1)
-                    } label: {
-                        Label("WIND", systemImage: "wind")
-                            .font(.system(size: 14, weight: .medium))
-                            .imageScale(.large)
-                    }
-                    
-                    GroupBox() {
-                        Text("12 km")
-                            .font(.system(size: 18, weight: .bold))
-                            .padding(1)
-                    } label: {
-                        Label("VISIBILITY", systemImage: "eye")
-                            .font(.system(size: 14, weight: .medium))
-                            .imageScale(.large)
-                    }
-                }
-            }
-            .padding()
         }.onAppear {
             Task {
                 await viewmodel.getCurrentWeather()
             }
-        }
-        
-        Spacer()
+        }.background(.teal)
     }
 }
 
