@@ -19,6 +19,10 @@ class CurrentWeatherModel {
     var updateTime = ""
     var icon = ""
     
+    var tempRange: String {
+        return "\(maxTemp) / \(minTemp)"
+    }
+    
     init(with currentWeatherDto: CurrentWeatherReportDto? = nil) {
         self.currentWeatherDto = currentWeatherDto
         setTemp()

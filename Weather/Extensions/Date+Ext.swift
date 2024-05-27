@@ -11,7 +11,7 @@ extension Date {
     func hhmm() -> String {
         let df = DateFormatter()
         df.locale = Locale(identifier: "en_US_POSIX")
-        df.dateFormat = "HH : mm"
+        df.dateFormat = "HH:mm"
         return df.string(from: self)
     }
 }
