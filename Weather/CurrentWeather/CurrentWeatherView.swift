@@ -12,9 +12,7 @@ struct CurrentWeatherView: View {
     
     var body: some View {
         ScrollView(.vertical) {
-            
             VStack {
-                
                 HStack {
                     VStack(spacing: 6) {
                         Text(viewmodel.currentWeatherModel.temp)
@@ -52,7 +50,9 @@ struct CurrentWeatherView: View {
                         .foregroundColor(.white)
                         .frame(width: 110, alignment: .leading)
                         .padding(24)
-                }.padding(EdgeInsets(top: 16, leading: 24, bottom: 16, trailing: 24))
+                }
+                .padding(EdgeInsets(top: 16, leading: 24, bottom: 16, trailing: 24))
+                
                 
                 
                 Grid(horizontalSpacing: 14, verticalSpacing: 14) {
@@ -107,8 +107,32 @@ struct CurrentWeatherView: View {
                                 .imageScale(.large)
                         }.backgroundStyle(.indigo.opacity(0.3))
                     }
-                }.padding(16)
+                }
+                .padding(16)
                 
+                
+                
+                GroupBox() {
+                    VStack {
+                        ForEach(0..<9) { item in
+                            WeatherForecastCellView()
+                        }
+                    }
+                } label: {
+                    VStack {
+                        Label("9-DAY FORECAST", systemImage: "calendar")
+                            .font(.system(size: 14, weight: .medium))
+                            .foregroundStyle(.white)
+                            .imageScale(.large)
+                            .frame(maxWidth: .infinity, alignment: .leading)
+                        
+                        Divider()
+                            .frame(minHeight: 1)
+                            .overlay(.white)
+                    }
+                }
+                .backgroundStyle(.indigo.opacity(0.3))
+                .padding(16)
             }
             
         }.onAppear {
