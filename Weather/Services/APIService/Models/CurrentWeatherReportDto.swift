@@ -17,7 +17,7 @@ struct CurrentWeatherReportDto: Codable {
     let temperature: Humidity?
     let warningMessage, mintempFrom00To09, rainfallFrom00To12, rainfallLastMonth: String?
     let rainfallJanuaryToLastMonth: String?
-    let tcmessage: [String]?
+    let tcmessage: String?
     let humidity: Humidity?
 }
 
