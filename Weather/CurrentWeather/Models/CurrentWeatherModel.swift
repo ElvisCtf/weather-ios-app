@@ -75,6 +75,7 @@ class CurrentWeatherModel {
             updateTime = "nil"
         }
     }
+    
     func setIcon() {
         if let unwrappedVal = currentWeatherDto?.icon?.first {
             icon = Constants.iconDict[unwrappedVal] ?? "cloud.sun"

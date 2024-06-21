@@ -28,4 +28,14 @@ class NetworkAPI {
             return nil
         }
     }
+    
+    static func getNineDaysForecast() async -> NineDaysForecastResponseDto? {
+        do {
+            let dto = try await NetworkManager.shared.request(method: .get, url: APIEndpoints.nineDaysForecast, of: NineDaysForecastResponseDto.self)
+            return dto
+        } catch {
+            print("[‼️] getLocalWeatherForecast() \(String(describing: error))")
+            return nil
+        }
+    }
 }

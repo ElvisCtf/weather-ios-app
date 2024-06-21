@@ -114,8 +114,15 @@ struct CurrentWeatherView: View {
                 
                 GroupBox() {
                     VStack {
-                        ForEach(0..<9) { item in
-                            WeatherForecastCellView()
+                        ForEach(viewmodel.nineDaysForecastModel.list) { item in
+                            WeatherForecastCellView(
+                                weekday: item.weekday,
+                                iconImage: item.iconImage,
+                                minTemp: item.minTemp,
+                                maxTemp: item.maxTemp,
+                                minHumid: item.minHumid,
+                                maxHumid: item.maxHumid
+                            )
                         }
                     }
                 } label: {
@@ -135,11 +142,16 @@ struct CurrentWeatherView: View {
                 .padding(16)
             }
             
-        }.onAppear {
+        }
+        .background(.teal.gradient)
+        .onAppear {
             Task {
                 await viewmodel.getCurrentWeather()
+                await viewmodel.getNineDaysForecast()
             }
-        }.background(.teal)
+        }
+        
+        
     }
 }
 
