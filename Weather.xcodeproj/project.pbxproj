@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		FC6366E12C2A5AB60051921B /* BasicCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC6366E02C2A5AB60051921B /* BasicCardView.swift */; };
 		FC7568952BFAE911007C5014 /* NetworkAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC7568942BFAE911007C5014 /* NetworkAPI.swift */; };
 		FC7568972BFAF9D6007C5014 /* LocalWeatherForecastDto.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC7568962BFAF9D6007C5014 /* LocalWeatherForecastDto.swift */; };
 		FC8B53062C12F95800B0DDFF /* NineDaysForecastResponseDto.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC8B53052C12F95800B0DDFF /* NineDaysForecastResponseDto.swift */; };
@@ -50,6 +51,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		FC6366E02C2A5AB60051921B /* BasicCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasicCardView.swift; sourceTree = "<group>"; };
 		FC7568942BFAE911007C5014 /* NetworkAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkAPI.swift; sourceTree = "<group>"; };
 		FC7568962BFAF9D6007C5014 /* LocalWeatherForecastDto.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalWeatherForecastDto.swift; sourceTree = "<group>"; };
 		FC8B53052C12F95800B0DDFF /* NineDaysForecastResponseDto.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NineDaysForecastResponseDto.swift; sourceTree = "<group>"; };
@@ -103,6 +105,31 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		FC6366DD2C2A593F0051921B /* Features */ = {
+			isa = PBXGroup;
+			children = (
+				FCD56A1B2BF5F6680007D1B5 /* CurrentWeather */,
+			);
+			path = Features;
+			sourceTree = "<group>";
+		};
+		FC6366DE2C2A596B0051921B /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				FCD569F32BF5DDC40007D1B5 /* CurrentWeatherView.swift */,
+				FCC457952C047AA900A15625 /* WeatherForecastCellView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		FC6366DF2C2A5A9D0051921B /* Subviews */ = {
+			isa = PBXGroup;
+			children = (
+				FC6366E02C2A5AB60051921B /* BasicCardView.swift */,
+			);
+			path = Subviews;
+			sourceTree = "<group>";
+		};
 		FC7568982BFB0150007C5014 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
@@ -152,14 +179,6 @@
 			path = Models;
 			sourceTree = "<group>";
 		};
-		FCC457942C047A8100A15625 /* Subviews */ = {
-			isa = PBXGroup;
-			children = (
-				FCC457952C047AA900A15625 /* WeatherForecastCellView.swift */,
-			);
-			path = Subviews;
-			sourceTree = "<group>";
-		};
 		FCD569E52BF5DDC40007D1B5 = {
 			isa = PBXGroup;
 			children = (
@@ -185,7 +204,8 @@
 			children = (
 				FCD569F12BF5DDC40007D1B5 /* WeatherApp.swift */,
 				FCBDA3092BF6FBCB00CB7408 /* Services */,
-				FCD56A1B2BF5F6680007D1B5 /* CurrentWeather */,
+				FC6366DD2C2A593F0051921B /* Features */,
+				FC6366DF2C2A5A9D0051921B /* Subviews */,
 				FC7568982BFB0150007C5014 /* Extensions */,
 				FCD569F72BF5DDC60007D1B5 /* Preview Content */,
 				FCD569F52BF5DDC60007D1B5 /* Assets.xcassets */,
@@ -221,9 +241,8 @@
 		FCD56A1B2BF5F6680007D1B5 /* CurrentWeather */ = {
 			isa = PBXGroup;
 			children = (
-				FCC457942C047A8100A15625 /* Subviews */,
 				FCBDA3192BF716AC00CB7408 /* Models */,
-				FCD569F32BF5DDC40007D1B5 /* CurrentWeatherView.swift */,
+				FC6366DE2C2A596B0051921B /* Views */,
 				FCBDA3102BF6FCFD00CB7408 /* CurrentWeatherViewModel.swift */,
 			);
 			path = CurrentWeather;
@@ -374,6 +393,7 @@
 				FC7568972BFAF9D6007C5014 /* LocalWeatherForecastDto.swift in Sources */,
 				FCBDA30C2BF6FC1900CB7408 /* APIEndpoints.swift in Sources */,
 				FCBDA31B2BF716BE00CB7408 /* CurrentWeatherModel.swift in Sources */,
+				FC6366E12C2A5AB60051921B /* BasicCardView.swift in Sources */,
 				FCBDA3132BF705D800CB7408 /* CurrentWeatherReportDto.swift in Sources */,
 				FCBDA3112BF6FCFD00CB7408 /* CurrentWeatherViewModel.swift in Sources */,
 				FCD569F42BF5DDC40007D1B5 /* CurrentWeatherView.swift in Sources */,
