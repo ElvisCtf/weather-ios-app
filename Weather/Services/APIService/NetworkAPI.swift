@@ -34,7 +34,7 @@ class NetworkAPI {
             let dto = try await NetworkManager.shared.request(method: .get, url: APIEndpoints.nineDaysForecast, of: NineDaysForecastResponseDto.self)
             return dto
         } catch {
-            print("[‼️] getLocalWeatherForecast() \(String(describing: error))")
+            print("[‼️] getNineDaysForecast() \(String(describing: error))")
             return nil
         }
     }
