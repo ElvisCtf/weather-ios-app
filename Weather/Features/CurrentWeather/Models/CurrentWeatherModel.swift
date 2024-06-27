@@ -12,12 +12,12 @@ class CurrentWeatherModel {
     
     @Suffix("°")    var test = "monke"
     
-    @Suffix("°")    var temp = 0.0
+    @Suffix("°")    var temp = 0
     @Suffix("°")    var minTemp = 0.0
     @Suffix("°")    var maxTemp = 0.0
     
     @Suffix("°")    var uvIndex = 0
-    @Suffix("%")    var humidity = 0.0
+    @Suffix("%")    var humidity = 0
     @Suffix("km/h") var windSpeed = 0.0
     @Suffix("km")   var visibility = 0.0
     
@@ -41,7 +41,7 @@ class CurrentWeatherModel {
     
     func setTemp() {
         if let unwrappedVal = currentWeatherDto?.temperature?.data?.first?.value {
-            temp = unwrappedVal
+            temp = Int(unwrappedVal)
             minTemp = round(((unwrappedVal - unwrappedVal / 6) * 10) / 10)
             maxTemp = round(((unwrappedVal + unwrappedVal / 6) * 10) / 10)
         }
@@ -55,7 +55,7 @@ class CurrentWeatherModel {
     
     func setHumidity() {
         if let unwrappedVal = currentWeatherDto?.humidity?.data?.first?.value {
-            humidity = unwrappedVal
+            humidity = Int(unwrappedVal)
         }
     }
     
