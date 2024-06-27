@@ -40,7 +40,7 @@ struct CurrentWeatherView: View {
 extension CurrentWeatherView {
     var generalWeatherInfoView: some View {
         VStack(spacing: 6) {
-            Text(viewmodel.currentWeatherModel.temp)
+            Text(viewmodel.currentWeatherModel.$temp)
                 .font(.system(size: 72, weight: .light))
                 .foregroundColor(.white)
                 .frame(maxWidth: .infinity, alignment: .leading)
@@ -75,13 +75,13 @@ extension CurrentWeatherView {
             GridRow {
                 BasicCardView(
                     title: "UV INDEX",
-                    content: viewmodel.currentWeatherModel.uvIndex,
+                    content: viewmodel.currentWeatherModel.$uvIndex,
                     icon: "sun.max"
                 )
                 
                 BasicCardView(
                     title: "HUMIDITY",
-                    content: viewmodel.currentWeatherModel.humidity,
+                    content: viewmodel.currentWeatherModel.$humidity,
                     icon: "drop"
                 )
             }
@@ -89,13 +89,13 @@ extension CurrentWeatherView {
             GridRow {
                 BasicCardView(
                     title: "WIND SPEED",
-                    content: viewmodel.currentWeatherModel.windSpeed,
+                    content: viewmodel.currentWeatherModel.$windSpeed,
                     icon: "wind"
                 )
                 
                 BasicCardView(
                     title: "VISIBILITY",
-                    content: viewmodel.currentWeatherModel.visibility,
+                    content: viewmodel.currentWeatherModel.$visibility,
                     icon: "eye"
                 )
             }
@@ -111,10 +111,10 @@ extension CurrentWeatherView {
                     WeatherForecastCellView(
                         weekday: item.weekday,
                         iconImage: item.iconImage,
-                        minTemp: item.minTemp,
-                        maxTemp: item.maxTemp,
-                        minHumid: item.minHumid,
-                        maxHumid: item.maxHumid
+                        minTemp: item.$minTemp,
+                        maxTemp: item.$maxTemp,
+                        minHumid: item.$minHumid,
+                        maxHumid: item.$maxHumid
                     )
                 }
             }
