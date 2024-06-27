@@ -31,7 +31,7 @@ struct Humidity: Codable {
 // MARK: - HumidityDatum
 struct HumidityDatum: Codable {
     let unit: PurpleUnit?
-    let value: Float?
+    let value: Double?
     let place: String?
 }
 
@@ -50,7 +50,7 @@ struct Rainfall: Codable {
 struct RainfallDatum: Codable {
     let unit: FluffyUnit?
     let place: String?
-    let max: Float?
+    let max: Double?
     let main: Main?
 }
 
@@ -71,6 +71,6 @@ struct Uvindex: Codable {
 // MARK: - UvindexDatum
 struct UvindexDatum: Codable {
     let place: String?
-    let value: Float?
+    let value: Double?
     let desc: String?
 }
