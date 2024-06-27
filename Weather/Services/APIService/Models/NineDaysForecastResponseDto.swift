@@ -46,7 +46,7 @@ struct WeatherForecast: Codable {
 
     enum CodingKeys: String, CodingKey {
         case forecastDate, week, forecastWind, forecastWeather, forecastMaxtemp, forecastMintemp, forecastMaxrh, forecastMinrh
-        case forecastIcon
-        case psr
+        case forecastIcon = "ForecastIcon"
+        case psr = "PSR"
     }
 }
