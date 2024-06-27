@@ -6,13 +6,18 @@
 //
 
 import Foundation
-
+import SwiftUI
 
 class CurrentWeatherViewModel: ObservableObject {
     @MainActor @Published var currentWeatherModel = CurrentWeatherModel()
     @MainActor @Published var nineDaysForecastModel = NineDaysForecastModel()
     @MainActor @Published var errorMessage = ""
     
+    var bgColor: AnyGradient {
+        let hour = Calendar.current.component(.hour, from: Date())
+        return hour >= 18 ? Color.black.gradient : Color.teal.gradient
+    }
+ 
     init() {}
     
     func getCurrentWeather() async {

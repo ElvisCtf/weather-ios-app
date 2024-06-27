@@ -26,7 +26,7 @@ struct CurrentWeatherView: View {
             
         }
         .clipShape(Rectangle())
-        .background(.teal.gradient)
+        .background(viewmodel.bgColor)
         .onAppear {
             Task {
                 await viewmodel.getCurrentWeather()
