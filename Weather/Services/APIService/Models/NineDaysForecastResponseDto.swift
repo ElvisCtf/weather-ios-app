@@ -19,7 +19,7 @@ struct NineDaysForecastResponseDto: Codable {
 // MARK: - Temp
 struct Temp: Codable {
     let place: String?
-    let value: Float?
+    let value: Double?
     let unit: Unit?
     let recordTime: Date?
     let depth: Depth?
@@ -28,7 +28,7 @@ struct Temp: Codable {
 // MARK: - Depth
 struct Depth: Codable {
     let unit: Unit?
-    let value: Float?
+    let value: Double?
 }
 
 enum Unit: String, Codable {
