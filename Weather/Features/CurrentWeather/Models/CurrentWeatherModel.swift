@@ -9,18 +9,23 @@ import Foundation
 
 class CurrentWeatherModel {
     let currentWeatherDto: CurrentWeatherReportResponseDto?
-    var temp = ""
-    var minTemp = ""
-    var maxTemp = ""
-    var uvIndex = ""
-    var humidity = ""
-    var windSpeed = ""
-    var visibility = ""
+    
+    @Suffix("°")    var test = "monke"
+    
+    @Suffix("°")    var temp = 0.0
+    @Suffix("°")    var minTemp = 0.0
+    @Suffix("°")    var maxTemp = 0.0
+    
+    @Suffix("°")    var uvIndex = 0
+    @Suffix("%")    var humidity = 0.0
+    @Suffix("km/h") var windSpeed = 0.0
+    @Suffix("km")   var visibility = 0.0
+    
     var updateTime = ""
     var icon = ""
     
     var tempRange: String {
-        return "\(maxTemp) / \(minTemp)"
+        return "\($maxTemp) / \($minTemp)"
     }
     
     init(with currentWeatherDto: CurrentWeatherReportResponseDto? = nil) {
@@ -36,36 +41,30 @@ class CurrentWeatherModel {
     
     func setTemp() {
         if let unwrappedVal = currentWeatherDto?.temperature?.data?.first?.value {
-            temp = "\(unwrappedVal)°"
-            minTemp = "\(round((unwrappedVal - unwrappedVal / 6) * 10) / 10)°"
-            maxTemp = "\(round((unwrappedVal + unwrappedVal / 6) * 10) / 10)°"
-        } else {
-            temp = "nil"
+            temp = unwrappedVal
+            minTemp = round(((unwrappedVal - unwrappedVal / 6) * 10) / 10)
+            maxTemp = round(((unwrappedVal + unwrappedVal / 6) * 10) / 10)
         }
     }
     
     func setUVIndex() {
         if let unwrappedVal = currentWeatherDto?.uvindex?.data?.first?.value {
-            uvIndex = "\(unwrappedVal)"
-        } else {
-            uvIndex = "nil"
+            uvIndex = Int(unwrappedVal)
         }
     }
     
     func setHumidity() {
         if let unwrappedVal = currentWeatherDto?.humidity?.data?.first?.value {
-            humidity = "\(unwrappedVal) %"
-        } else {
-            humidity = "nil"
+            humidity = unwrappedVal
         }
     }
     
     func setWindSpeed() {
-        windSpeed = "15 km/h"
+        windSpeed = 15
     }
     
     func setVisibility() {
-        visibility = "9 km"
+        visibility = 9
     }
     
     func setUpdateTime() {
