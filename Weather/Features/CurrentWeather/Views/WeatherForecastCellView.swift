@@ -26,7 +26,7 @@ struct WeatherForecastCellView: View {
                 .scaledToFit()
                 .font(Font.title.weight(.light))
                 .foregroundColor(.white)
-                .frame(width: 24, alignment: .leading)
+                .frame(height: 24, alignment: .leading)
             
             Spacer().frame(width: 42)
             
