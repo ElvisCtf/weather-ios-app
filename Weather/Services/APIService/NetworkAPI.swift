@@ -9,9 +9,9 @@ import Foundation
 
 
 class NetworkAPI {
-    static func getCurrentWeatherReport() async -> CurrentWeatherReportDto? {
+    static func getCurrentWeatherReport() async -> CurrentWeatherReportResponseDto? {
         do {
-            let dto = try await NetworkManager.shared.request(method: .get, url: APIEndpoints.currentWeatherReport, of: CurrentWeatherReportDto.self)
+            let dto = try await NetworkManager.shared.request(method: .get, url: APIEndpoints.currentWeatherReport, of: CurrentWeatherReportResponseDto.self)
             return dto
         } catch {
             print("[‼️] getCurrentWeatherReport() \(String(describing: error))")
@@ -19,9 +19,9 @@ class NetworkAPI {
         }
     }
     
-    static func getLocalWeatherForecast() async -> LocalWeatherForecastDto? {
+    static func getLocalWeatherForecast() async -> LocalWeatherForecastResponseDto? {
         do {
-            let dto = try await NetworkManager.shared.request(method: .get, url: APIEndpoints.localWeatherForecast, of: LocalWeatherForecastDto.self)
+            let dto = try await NetworkManager.shared.request(method: .get, url: APIEndpoints.localWeatherForecast, of: LocalWeatherForecastResponseDto.self)
             return dto
         } catch {
             print("[‼️] getLocalWeatherForecast() \(String(describing: error))")

@@ -8,7 +8,7 @@
 import Foundation
 
 class CurrentWeatherModel {
-    let currentWeatherDto: CurrentWeatherReportDto?
+    let currentWeatherDto: CurrentWeatherReportResponseDto?
     var temp = ""
     var minTemp = ""
     var maxTemp = ""
@@ -23,7 +23,7 @@ class CurrentWeatherModel {
         return "\(maxTemp) / \(minTemp)"
     }
     
-    init(with currentWeatherDto: CurrentWeatherReportDto? = nil) {
+    init(with currentWeatherDto: CurrentWeatherReportResponseDto? = nil) {
         self.currentWeatherDto = currentWeatherDto
         setTemp()
         setUVIndex()

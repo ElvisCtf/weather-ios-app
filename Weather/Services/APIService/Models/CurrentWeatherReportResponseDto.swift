@@ -1,5 +1,5 @@
 //
-//  CurrentWeatherReportDto.swift
+//  CurrentWeatherReportResponseDto.swift
 //  Weather
 //
 //  Created by Elvis Cheng (ESD - Software Trainee, Digital Solutions) on 17/5/2024.
@@ -8,7 +8,7 @@
 import Foundation
 
 
-struct CurrentWeatherReportDto: Codable {
+struct CurrentWeatherReportResponseDto: Codable {
     let rainfall: Rainfall?
     let icon: [Int]?
     let iconUpdateTime: Date?

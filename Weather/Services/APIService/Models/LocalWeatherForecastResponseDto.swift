@@ -8,7 +8,7 @@
 import Foundation
 
 // MARK: - LocalWeatherForecastDto
-struct LocalWeatherForecastDto: Codable {
+struct LocalWeatherForecastResponseDto: Codable {
     let generalSituation, tcInfo, fireDangerWarning, forecastPeriod: String?
     let forecastDesc, outlook: String?
     let updateTime: Date?
