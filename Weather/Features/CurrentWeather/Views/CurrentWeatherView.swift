@@ -25,6 +25,7 @@ struct CurrentWeatherView: View {
             }
             
         }
+        .clipShape(Rectangle())
         .background(.teal.gradient)
         .onAppear {
             Task {
@@ -32,8 +33,6 @@ struct CurrentWeatherView: View {
                 await viewmodel.getNineDaysForecast()
             }
         }
-        
-        
     }
 }
 
