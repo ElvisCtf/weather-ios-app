@@ -7,7 +7,6 @@
 
 import Foundation
 
-
 class NetworkAPI {
     static func getCurrentWeatherReport() async -> CurrentWeatherReportResponseDto? {
         do {
@@ -37,5 +36,5 @@ class NetworkAPI {
             print("[‼️] getNineDaysForecast() \(String(describing: error))")
             return nil
         }
-    }
+    }    
 }

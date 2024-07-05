@@ -8,7 +8,7 @@
 import Foundation
 import SwiftUI
 
-class CurrentWeatherViewModel: ObservableObject {
+final class CurrentWeatherViewModel: ObservableObject {
     @MainActor @Published var currentWeatherModel = CurrentWeatherModel()
     @MainActor @Published var nineDaysForecastModel = NineDaysForecastModel()
     @MainActor @Published var errorMessage = ""
