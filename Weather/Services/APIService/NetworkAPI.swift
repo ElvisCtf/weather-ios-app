@@ -13,7 +13,7 @@ class NetworkAPI {
             let dto = try await NetworkManager.shared.request(method: .get, url: APIEndpoints.currentWeatherReport, of: CurrentWeatherReportResponseDto.self)
             return dto
         } catch {
-            print("[‼️] getCurrentWeatherReport() \(String(describing: error))")
+            print("[‼️] \(#function) \(String(describing: error))")
             return nil
         }
     }
@@ -23,7 +23,7 @@ class NetworkAPI {
             let dto = try await NetworkManager.shared.request(method: .get, url: APIEndpoints.localWeatherForecast, of: LocalWeatherForecastResponseDto.self)
             return dto
         } catch {
-            print("[‼️] getLocalWeatherForecast() \(String(describing: error))")
+            print("[‼️] \(#function) \(String(describing: error))")
             return nil
         }
     }
@@ -33,7 +33,7 @@ class NetworkAPI {
             let dto = try await NetworkManager.shared.request(method: .get, url: APIEndpoints.nineDaysForecast, of: NineDaysForecastResponseDto.self)
             return dto
         } catch {
-            print("[‼️] getNineDaysForecast() \(String(describing: error))")
+            print("[‼️] \(#function) \(String(describing: error))")
             return nil
         }
     }    

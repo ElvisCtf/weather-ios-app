@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct CurrentWeatherView: View {
-    @StateObject var viewmodel = CurrentWeatherViewModel()
+    @StateObject var viewModel = CurrentWeatherViewModel()
     
     var body: some View {
         ScrollView(.vertical) {
@@ -26,11 +26,11 @@ struct CurrentWeatherView: View {
             
         }
         .clipShape(Rectangle())
-        .background(viewmodel.bgColor)
+        .background(viewModel.bgColor)
         .onAppear {
             Task {
-                await viewmodel.getCurrentWeather()
-                await viewmodel.getNineDaysForecast()
+                await viewModel.getCurrentWeather()
+                await viewModel.getNineDaysForecast()
             }
         }
     }
@@ -40,7 +40,7 @@ struct CurrentWeatherView: View {
 extension CurrentWeatherView {
     var generalWeatherInfoView: some View {
         VStack(spacing: 6) {
-            Text(viewmodel.currentWeatherModel.$temp)
+            Text(viewModel.currentWeatherModel.$temp)
                 .font(.system(size: 72, weight: .light))
                 .foregroundColor(.white)
                 .frame(maxWidth: .infinity, alignment: .leading)
@@ -57,12 +57,12 @@ extension CurrentWeatherView {
                 .frame(maxWidth: .infinity, alignment: .leading)
             
             
-            Text(viewmodel.currentWeatherModel.tempRange)
+            Text(viewModel.currentWeatherModel.tempRange)
                 .font(.system(size: 14, weight: .regular))
                 .foregroundColor(.white)
                 .frame(maxWidth: .infinity, alignment: .leading)
             
-            Text(viewmodel.currentWeatherModel.updateTime)
+            Text(viewModel.currentWeatherModel.updateTime)
                 .font(.system(size: 14, weight: .regular))
                 .foregroundColor(.white)
                 .frame(maxWidth: .infinity, alignment: .leading)
@@ -75,13 +75,13 @@ extension CurrentWeatherView {
             GridRow {
                 BasicCardView(
                     title: "UV INDEX",
-                    content: viewmodel.currentWeatherModel.$uvIndex,
+                    content: viewModel.currentWeatherModel.$uvIndex,
                     icon: "sun.max"
                 )
                 
                 BasicCardView(
                     title: "HUMIDITY",
-                    content: viewmodel.currentWeatherModel.$humidity,
+                    content: viewModel.currentWeatherModel.$humidity,
                     icon: "drop"
                 )
             }
@@ -89,13 +89,13 @@ extension CurrentWeatherView {
             GridRow {
                 BasicCardView(
                     title: "WIND SPEED",
-                    content: viewmodel.currentWeatherModel.$windSpeed,
+                    content: viewModel.currentWeatherModel.$windSpeed,
                     icon: "wind"
                 )
                 
                 BasicCardView(
                     title: "VISIBILITY",
-                    content: viewmodel.currentWeatherModel.$visibility,
+                    content: viewModel.currentWeatherModel.$visibility,
                     icon: "eye"
                 )
             }
@@ -107,7 +107,7 @@ extension CurrentWeatherView {
     var nineDayForecastListView: some View {
         GroupBox() {
             VStack {
-                ForEach(viewmodel.nineDaysForecastModel.list) { item in
+                ForEach(viewModel.nineDaysForecastModel.list) { item in
                     WeatherForecastCellView(
                         weekday: item.weekday,
                         iconImage: item.iconImage,
@@ -137,7 +137,7 @@ extension CurrentWeatherView {
     
     
     var weatherIconView: some View {
-        Image(systemName: viewmodel.currentWeatherModel.icon)
+        Image(systemName: viewModel.currentWeatherModel.icon)
             .resizable()
             .scaledToFit()
             .font(Font.title.weight(.light))
