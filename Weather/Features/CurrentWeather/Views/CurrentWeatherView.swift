@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct CurrentWeatherView: View {
-    @StateObject var viewModel = CurrentWeatherViewModel()
+    @State var viewModel = CurrentWeatherViewModel()
     
     var body: some View {
         ScrollView(.vertical) {
