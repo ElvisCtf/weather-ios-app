@@ -2,7 +2,11 @@
 
 ## Overview
 **Quick Weather** is an iOS app, which allows users check Hong Kong weather. 
-It is still under development.
+It is still under development.<br/>
+<img src="https://github.com/user-attachments/assets/d3859a13-4d72-4860-8b31-2c13fda03c92" width="200"/>
+<img src="https://github.com/user-attachments/assets/ec3151e4-ea1e-4f2a-8369-9f19b15c2207" width="200"/><br/>
+<img src="https://github.com/user-attachments/assets/33474269-5c7e-4a0f-92e6-8ad2e96fa599" width="200"/> 
+<img src="https://github.com/user-attachments/assets/2bc7304b-1928-4173-8697-47fdac784f16" width="200"/>
 
 ## Features
 - ✅ Show current weather
