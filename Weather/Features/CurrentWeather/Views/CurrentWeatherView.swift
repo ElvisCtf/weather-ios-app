@@ -2,7 +2,7 @@
 //  ContentView.swift
 //  Weather
 //
-//  Created by Elvis Cheng (ESD - Software Trainee, Digital Solutions) on 16/5/2024.
+//  Created by Elvis Cheng on 16/5/2024.
 //
 
 import SwiftUI
