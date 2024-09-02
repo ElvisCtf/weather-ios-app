@@ -2,7 +2,7 @@
 //  Repository.swift
 //  Weather
 //
-//  Created by Elvis Cheng (ESD - Software Trainee, Digital Solutions) on 20/5/2024.
+//  Created by Elvis Cheng on 20/5/2024.
 //
 
 final class Repository {

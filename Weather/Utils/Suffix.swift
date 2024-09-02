@@ -2,7 +2,7 @@
 //  Suffix.swift
 //  Weather
 //
-//  Created by Elvis Cheng (ESD - Software Trainee, Digital Solutions) on 27/6/2024.
+//  Created by Elvis Cheng on 27/6/2024.
 //
 
 import Foundation

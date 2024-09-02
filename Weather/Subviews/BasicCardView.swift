@@ -2,7 +2,7 @@
 //  BasicCardView.swift
 //  Weather
 //
-//  Created by Elvis Cheng (ESD - Software Trainee, Digital Solutions) on 25/6/2024.
+//  Created by Elvis Cheng on 25/6/2024.
 //
 
 import SwiftUI
