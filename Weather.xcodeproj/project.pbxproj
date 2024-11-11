@@ -168,8 +168,8 @@
 				FCBDA30B2BF6FC1900CB7408 /* APIEndpoints.swift */,
 				FCBDA30D2BF6FC7900CB7408 /* NetworkManager.swift */,
 				FC7568942BFAE911007C5014 /* Repository.swift */,
-				FCBDA30F2BF6FCAE00CB7408 /* Models */,
 				FCE818F72CE1BFF00004F0E7 /* WeatherAPIService.swift */,
+				FCBDA30F2BF6FCAE00CB7408 /* Models */,
 			);
 			path = API;
 			sourceTree = "<group>";

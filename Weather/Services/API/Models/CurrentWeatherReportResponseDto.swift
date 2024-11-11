@@ -15,10 +15,10 @@ struct CurrentWeatherReportResponseDto: Codable {
     let uvindex: Uvindex?
     let updateTime: Date?
     let temperature: Humidity?
-    let warningMessage: [String]?
+    let warningMessage: Message?
     let mintempFrom00To09, rainfallFrom00To12, rainfallLastMonth: String?
     let rainfallJanuaryToLastMonth: String?
-    let tcmessage: String?
+    let tcmessage: Message?
     let humidity: Humidity?
 }
 
@@ -73,4 +73,26 @@ struct UvindexDatum: Codable {
     let place: String?
     let value: Double?
     let desc: String?
+}
+
+// MARK: - UvindexDatum
+struct Message: Codable {
+    let message: String
+    let messages: [String]
+    
+    init(from decoder: Decoder) throws {
+        let container =  try decoder.singleValueContainer()
+        do {
+            message = try container.decode(String.self)
+            messages = [String]()
+        } catch {
+            messages = try container.decode([String].self)
+            message = ""
+        }
+    }
+    
+//    func encode(to encoder: Encoder) throws {
+//        var container = encoder.singleValueContainer()
+//        //try isEdited ? container.encode(editedTime) : container.encode(false)
+//    }
 }
