@@ -14,12 +14,24 @@ struct CurrentWeatherReportResponseDto: Codable {
     let iconUpdateTime: Date?
     let uvindex: Uvindex?
     let updateTime: Date?
-    let temperature: Humidity?
+    let temperature: Temperature?
     let warningMessage: Message?
     let mintempFrom00To09, rainfallFrom00To12, rainfallLastMonth: String?
     let rainfallJanuaryToLastMonth: String?
     let tcmessage: Message?
     let humidity: Humidity?
+}
+
+// MARK: - Temperature
+struct Temperature: Codable {
+    let recordTime: Date?
+    let data: [TemperatureDatum]?
+}
+
+struct TemperatureDatum: Codable {
+    let unit: String?
+    let value: Double?
+    let place: String?
 }
 
 // MARK: - Humidity
@@ -28,16 +40,10 @@ struct Humidity: Codable {
     let data: [HumidityDatum]?
 }
 
-// MARK: - HumidityDatum
 struct HumidityDatum: Codable {
-    let unit: PurpleUnit?
+    let unit: String?
     let value: Double?
     let place: String?
-}
-
-enum PurpleUnit: String, Codable {
-    case c = "C"
-    case percent = "percent"
 }
 
 // MARK: - Rainfall
@@ -46,7 +52,6 @@ struct Rainfall: Codable {
     let startTime, endTime: Date?
 }
 
-// MARK: - RainfallDatum
 struct RainfallDatum: Codable {
     let unit: FluffyUnit?
     let place: String?
@@ -68,14 +73,13 @@ struct Uvindex: Codable {
     let recordDesc: String?
 }
 
-// MARK: - UvindexDatum
 struct UvindexDatum: Codable {
     let place: String?
     let value: Double?
     let desc: String?
 }
 
-// MARK: - UvindexDatum
+// MARK: - Message
 struct Message: Codable {
     let message: String
     let messages: [String]
@@ -90,9 +94,4 @@ struct Message: Codable {
             message = ""
         }
     }
-    
-//    func encode(to encoder: Encoder) throws {
-//        var container = encoder.singleValueContainer()
-//        //try isEdited ? container.encode(editedTime) : container.encode(false)
-//    }
 }
